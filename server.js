@@ -23,7 +23,10 @@ const Role = db.role;
 db.mongoose
   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    'auth': { 'authSource': 'admin' },
+    'user': dbConfig.mongodb_user,
+    'pass': dbConfig.mongodb_password
   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
