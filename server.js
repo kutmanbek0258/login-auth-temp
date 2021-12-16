@@ -1,15 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+// const cors = require("cors");
 const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-
-app.use(cors(corsOptions));
+// var corsOptions = {
+//   origin: "http://localhost:8081"
+// };
+//
+// app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -25,8 +25,8 @@ db.mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     'auth': { 'authSource': 'admin' },
-    'user': dbConfig.mongodb_user,
-    'pass': dbConfig.mongodb_password
+    'user': dbConfig.DB_USER,
+    'pass': dbConfig.DB_PASSWORD
   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
