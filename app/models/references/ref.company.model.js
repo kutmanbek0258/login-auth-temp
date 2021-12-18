@@ -11,7 +11,7 @@ const Company = mongoose.model(
         name: String,
         description: String,
         ITN: String,
-        admin: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        admin: { type: mongoose.Schema.Types.ObjectId, ref: 'ref.user' },
         address: String,
         phone: String,
         email: String,

@@ -8,4 +8,6 @@ const ProductWriteOff = mongoose.model(
         depot: { type: mongoose.schema.Types.ObjectId, ref: 'ref.depot' },
         comment: String
     })
-)
+);
+
+module.exports = ProductWriteOff;
